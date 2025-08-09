@@ -1,0 +1,12 @@
+User-agent: *
+Disallow:
+
+# Allow all bots full access to the site
+Allow: /
+
+# Preferred sitemap location (both domains)
+Sitemap: https://renesarjeant.net/sitemap.xml
+Sitemap: https://renesarjeant.github.io/sitemap.xml
+
+# Crawl-delay (optional, but can help if server is small)
+Crawl-delay: 5

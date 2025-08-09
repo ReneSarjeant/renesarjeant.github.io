@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ReneSarjeant — Veteran. Gamer. Purpose.</title>
+  <meta name="description" content="Army vet, gamer grandpa, and unapologetic storyteller. From survival horror to soul-searching indies, streaming with a purpose." />
+  <meta property="og:title" content="ReneSarjeant — Live on Kick" />
+  <meta property="og:description" content="Variety horror & heart. Veteran support, real talk, and good vibes. Watch on Kick." />
+  <meta property="og:url" content="https://renesarjeant.net" />
+  <meta property="og:image" content="https://files.kick.com/images/user/210976/profile_image/conversion/ebadf1d0-a3a9-4e95-86d7-f28cec6e5363-fullsize.webp" />
+  <meta name="theme-color" content="#003087" />
+  <meta name="color-scheme" content="dark light" />
+  <link rel="icon" href="https://files.kick.com/images/user/210976/profile_image/conversion/ebadf1d0-a3a9-4e95-86d7-f28cec6e5363-fullsize.webp">
+  <link rel="apple-touch-icon" href="https://files.kick.com/images/user/210976/profile_image/conversion/ebadf1d0-a3a9-4e95-86d7-f28cec6e5363-fullsize.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#000;
+      --card:#101010;
+      --muted:#d0d0d0;
+      --text:#fff;
+      --kick:#ffd200;
+      --acc:#003087;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;background:linear-gradient(180deg,var(--acc) 0%, var(--bg) 100%);
+      color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    }
+    .wrap{max-width:1100px;margin:0 auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:64px;height:64px;border-radius:14px;position:relative;background:url('https://files.kick.com/images/user/210976/profile_image/conversion/ebadf1d0-a3a9-4e95-86d7-f28cec6e5363-fullsize.webp') center/cover no-repeat;box-shadow:0 0 20px var(--kick), inset 0 0 10px rgba(0,0,0,.4)}
+    .brand h1{font-size:1.2rem;margin:0;font-weight:800;letter-spacing:.2px;color:var(--kick)}
+    .tag{font:600 12px/1 JetBrains Mono,monospace;color:var(--muted)}
+    nav{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{appearance:none;border:none;padding:12px 16px;border-radius:14px;font-weight:700;letter-spacing:.2px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:transform .2s ease,box-shadow .2s ease}
+    .btn.primary{background:linear-gradient(180deg,var(--kick),#e5b800);color:#000;box-shadow:0 8px 20px rgba(255,210,0,.25)}
+    .btn.primary:hover{transform:translateY(-2px)}
+    .btn.ghost{background:rgba(255,255,255,.04);color:var(--text);border:1px solid rgba(255,255,255,.08)}
+    .btn.ghost:hover{background:rgba(255,255,255,.07)}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center;margin:34px 0}
+    .hero h2{margin:0 0 10px;font-size:clamp(28px,4vw,46px);font-weight:800;color:var(--kick)}
+    .hero p{margin:0 0 22px;color:var(--muted);font-size:clamp(14px,2vw,18px)}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:18px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .tile{padding:18px;border-radius:16px;background:var(--card);border:1px solid rgba(255,255,255,.06)}
+    .meta{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+    .pulse{position:relative}
+    .pulse::after{content:"";position:absolute;inset:-2px;border-radius:20px;box-shadow:0 0 0 0 rgba(255,210,0,.35);animation:pulse 2.4s infinite}
+    @keyframes pulse{to{box-shadow:0 0 0 22px rgba(255,210,0,0)}}
+    .vids a{display:block;text-decoration:none;color:inherit}
+    .vids .v{display:flex;gap:12px;align-items:center;padding:12px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}
+    .v small{color:var(--muted)}
+    .causes-wrapper{display:flex;justify-content:center;margin-top:12px}
+    .causes{display:flex;gap:20px;justify-content:center}
+    .cause{flex:1;min-width:250px;background:var(--card);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.06);text-align:center}
+    .cause a{color:var(--kick);font-weight:700;text-decoration:none}
+    footer{margin:34px 0 12px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.causes{flex-direction:column;align-items:center}}
+    @media (max-width:620px){.grid{grid-template-columns:1fr}}
+    @media (prefers-reduced-motion: reduce){.pulse::after{animation:none}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo pulse" aria-hidden="true"></div>
+        <div>
+          <h1>ReneSarjeant</h1>
+          <div class="tag">CAPCOM Creator • Resident Evil • DBD</div>
+        </div>
+      </div>
+      <nav aria-label="Primary">
+        <a class="btn primary" href="https://kick.com/renesarjeant" target="_blank" rel="noopener">▶ Watch on Kick</a>
+        <a class="btn ghost" href="https://kick.com/renesarjeant/videos" target="_blank" rel="noopener">Recent VODs</a>
+        <a class="btn ghost" href="https://twitter.com/renesarjeant" target="_blank" rel="noopener">X / Twitter</a>
+        <a class="btn primary" href="https://ko-fi.com/renesarjeant" target="_blank" rel="noopener" aria-label="Donate on Ko-fi">☕ Donate</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h2>Gamer First. Heart Always.</h2>
+        <p>Army vet & CAPCOM creator streaming Resident Evil, DBD, and other horror hits with purpose. Real talk, veteran support, and good vibes—live on Kick.</p>
+        <div class="meta">
+          <div>⚡ Recently streamed: Dead by Daylight, Resident Evil, The Walking Dead</div>
+          <div>🎯 Mission: Support veterans & mental health</div>
+        </div>
+      </div>
+      <div class="card">
+        <div style="font-size:14px;color:var(--muted);margin-bottom:8px">Latest Highlights</div>
+        <div class="vids">
+          <a class="v" href="https://kick.com/renesarjeant/videos/606bbc82-f066-482f-b8f9-9818cc0d1a77" target="_blank" rel="noopener">
+            <div>🕰️</div>
+            <div>
+              <div><strong>Extra Long Grind</strong> — Gigi’s Got the Baby, I Got the Fog</div>
+              <small>Resident Evil 2 • VOD on Kick</small>
+            </div>
+          </a>
+          <br />
+          <a class="v" href="https://kick.com/renesarjeant/videos/0ddbf28f-bd2a-4a99-9099-7e4a6e64de91" target="_blank" rel="noopener">
+            <div>🎮</div>
+            <div>
+              <div><strong>Gamer First, Heart Always</strong> — Variety Stream for Veteran Support</div>
+              <small>The Walking Dead • VOD on Kick</small>
+            </div>
+          </a>
+          <br />
+          <a class="v" href="https://kick.com/renesarjeant/videos/d703567d-c519-4a4e-8fae-5de1318929ce" target="_blank" rel="noopener">
+            <div>💬</div>
+            <div>
+              <div><strong>Chaos Loading</strong> — Big Vibes, Bigger Mission</div>
+              <small>Just Chatting • VOD on Kick</small>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Info">
+      <div class="tile">
+        <h3 style="margin:0 0 8px">About</h3>
+        <p style="margin:0;color:var(--muted)">22-year Army veteran, CAPCOM creator, streamer with purpose. Expect horror, hope, and straight talk. Community first, always.</p>
+      </div>
+      <div class="tile">
+        <h3 style="margin:0 0 8px">Live Commands</h3>
+        <p style="margin:0;color:var(--muted)"><code>!agb</code> • <code>!roger</code> • <code>!about</code> • <code>!rez</code> — learn about causes & sponsors during stream.</p>
+      </div>
+      <div class="tile">
+        <h3 style="margin:0 0 8px">Join In</h3>
+        <p style="margin:0;color:var(--muted)">Drop in, say hello, and keep it respectful. We lift each other up here.</p>
+      </div>
+      <div class="tile" style="grid-column:1 / -1;">
+        <center>
+          <h3 style="margin:0 0 8px;">Our Causes</h3>
+          <div class="causes-wrapper">
+            <div class="causes">
+              <div class="cause"><strong>ROGER</strong><br><a href="https://goroger.org" target="_blank" rel="noopener">goroger.org</a><p style="margin:4px 0 0;color:var(--muted)">Free, confidential mental wellness support for veterans and service members.</p></div>
+              <div class="cause"><strong>Always Give Back</strong><br><a href="https://alwaysgiveback.org" target="_blank" rel="noopener">alwaysgiveback.org</a><p style="margin:4px 0 0;color:var(--muted)">Gaming PCs and care packages for disabled veterans and active-duty members.</p></div>
+            </div>
+          </div>
+        </center>
+      </div>
+    </section>
+
+    <footer>
+      <div>© 2025 ReneSarjeant. All rights reserved. renesarjeant.net</div>
+      <div>Built from live info on <a href="https://kick.com/renesarjeant" target="_blank" rel="noopener" style="color:var(--kick)">Kick</a>.</div>
+    </footer>
+  </div>
+  <noscript>JavaScript is disabled. Links still work, Hooah.</noscript>
+</body>
+</html>

@@ -71,6 +71,14 @@
     .causes{display:flex;gap:20px;justify-content:center}
     .cause{flex:1;min-width:250px;background:var(--card);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.06);text-align:center}
     .cause a{color:var(--kick);font-weight:700;text-decoration:none}
+    .commands-link {
+      color: var(--kick);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .commands-link:hover {
+      text-decoration: underline;
+    }
     footer{margin:34px 0 12px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
     @media (max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.causes{flex-direction:column;align-items:center}}
     @media (max-width:620px){.grid{grid-template-columns:1fr}}
@@ -144,7 +152,7 @@
       </div>
       <div class="tile">
         <h3 style="margin:0 0 8px">Live Commands</h3>
-        <p style="margin:0;color:var(--muted)"><strong><a href="https://renesarjeant.github.io/commands.html" target="_blank" rel="noopener" style="color:var(--kick)">Full Commands List → commands.html</a></strong><br>Common shortcuts: <code>!agb</code> • <code>!roger</code> • <code>!sss</code> • <code>!hotline</code> • <code>!988</code> • <code>!discord</code> • <code>!tip</code> • <code>!here</code> • <code>!rez</code> • <code>!rogue</code></p>
+        <p style="margin:0;color:var(--muted)">Type <a href="https://renesarjeant.github.io/commands.html" target="_blank" rel="noopener" class="commands-link">!commands</a> in chat for the full list.<br>Common shortcuts: <code>!agb</code> • <code>!roger</code> • <code>!sss</code> • <code>!hotline</code> • <code>!988</code> • <code>!discord</code> • <code>!tip</code> • <code>!here</code> • <code>!rez</code> • <code>!rogue</code></p>
       </div>
       <div class="tile">
         <h3 style="margin:0 0 8px">Join In</h3>

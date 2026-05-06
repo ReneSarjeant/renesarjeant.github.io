@@ -5,119 +5,216 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReneSarjeant — Channel Commands</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0f0f0f;
-            color: #e0e0e0;
-            max-width: 900px;
-            margin: 40px auto;
+            background: linear-gradient(#0a0a0a, #1a0000);
+            color: #ffcc00;
+            font-family: 'Press Start 2P', system-ui;
+            margin: 0;
             padding: 20px;
             line-height: 1.6;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255, 0, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(255, 204, 0, 0.1) 0%, transparent 50%);
         }
-        h1, h2, h3 {
-            color: #00ff9d;
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
         }
-        h1 {
+        
+        header {
             text-align: center;
-            border-bottom: 2px solid #00ff9d;
-            padding-bottom: 15px;
+            margin-bottom: 40px;
+            border-bottom: 4px solid #ff0000;
+            padding-bottom: 20px;
         }
-        .section {
-            background-color: #1a1a1a;
-            padding: 20px;
-            margin: 25px 0;
+        
+        h1 {
+            font-size: 2.8rem;
+            color: #ff0000;
+            text-shadow: 0 0 10px #ff0000;
+            margin: 10px 0;
+        }
+        
+        h2 {
+            color: #ffcc00;
+            border-bottom: 2px solid #ffcc00;
+            padding-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            color: #ff9999;
+            margin-top: -10px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .box {
+            background: rgba(20, 0, 0, 0.85);
+            border: 3px solid #ff0000;
             border-radius: 8px;
-            border-left: 5px solid #00ff9d;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
         }
+        
+        .box h3 {
+            color: #ffcc00;
+            margin-top: 0;
+            font-size: 1.3rem;
+            text-align: center;
+            border-bottom: 2px solid #ffcc00;
+            padding-bottom: 8px;
+        }
+        
         ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
+            margin: 0;
         }
+        
         li {
-            padding: 6px 0;
-            font-size: 1.1em;
+            padding: 8px 0;
+            border-bottom: 1px dashed rgba(255, 204, 0, 0.3);
+            font-size: 1.05rem;
         }
-        a {
-            color: #00ff9d;
-            text-decoration: none;
+        
+        li:last-child {
+            border-bottom: none;
         }
-        a:hover {
-            text-decoration: underline;
+        
+        .command {
+            color: #00ffcc;
+            font-weight: bold;
         }
+        
         .return {
+            display: block;
             text-align: center;
             margin-top: 40px;
-            font-size: 1.1em;
+            font-size: 1.1rem;
+            color: #ff9999;
+            text-decoration: none;
+        }
+        
+        .return:hover {
+            color: #ffcc00;
+            text-shadow: 0 0 8px #ffcc00;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>ReneSarjeant — Channel Commands</h1>
-    
-    <div class="section">
-        <h2>Live Chat Commands</h2>
-        <p>Type any of these in chat during streams. Most are available on Kick, Twitch, and YouTube.</p>
-        
-        <h3>General / Info</h3>
-        <ul>
-            <li>!about</li>
-            <li>!commands</li>
-            <li>!discord</li>
-            <li>!english / !eng</li>
-            <li>!here</li>
-            <li>!hotline / !help</li>
-            <li>!level</li>
-            <li>!lfg</li>
-            <li>!lurk</li>
-            <li>!shout</li>
-            <li>!socials</li>
-            <li>!sss</li>
-            <li>!tips</li>
-            <li>!clip</li>
-        </ul>
-        
-        <h3>Fun & Interaction</h3>
-        <ul>
-            <li>!chill</li>
-            <li>!first</li>
-            <li>!hug</li>
-            <li>!joke</li>
-            <li>!rez / !coffee</li>
-            <li>!slots</li>
-            <li>!bduel</li>
-            <li>!brules / !brule</li>
-            <li>!bhelp</li>
-            <li>!clip</li>
-        </ul>
-        
-        <h3>Support & Links</h3>
-        <ul>
-            <li>!agb</li>
-            <li>!dbd</li>
-            <li>!roger / !goroger</li>
-            <li>!rogue / !energy</li>
-            <li>!steam</li>
-            <li>!xbox</li>
-            <li>!clip</li>
-        </ul>
-        
-        <h3>Moderators</h3>
-        <ul>
-            <li>!so</li>
-            <li>!wtf</li>
-        </ul>
-        
-        <h3>Stream Stats</h3>
-        <ul>
-            <li>!clip</li>
-            <li>!xp</li>
-            <li>!uptime</li>
-            <li>!followage</li>
-        </ul>
-    </div>
+    <div class="container">
+        <header>
+            <h1>RENESARJEANT</h1>
+            <p class="subtitle">CHANNEL COMMANDS</p>
+        </header>
 
-    <div class="return">
-        <a href="https://renesarjeant.github.io/">← Return to Main Page</a>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; color: #ff9999;">
+            Type any of these in chat during streams.<br>
+            Most commands work on Kick, Twitch, and YouTube.
+        </p>
+
+        <div class="grid">
+            <!-- General / Info -->
+            <div class="box">
+                <h3>GENERAL / INFO</h3>
+                <ul>
+                    <li><span class="command">!about</span></li>
+                    <li><span class="command">!commands</span></li>
+                    <li><span class="command">!discord</span></li>
+                    <li><span class="command">!english / !eng</span></li>
+                    <li><span class="command">!here</span></li>
+                    <li><span class="command">!hotline / !help</span></li>
+                    <li><span class="command">!level</span></li>
+                    <li><span class="command">!lfg</span></li>
+                    <li><span class="command">!lurk</span></li>
+                    <li><span class="command">!shout</span></li>
+                    <li><span class="command">!socials</span></li>
+                    <li><span class="command">!sss</span></li>
+                    <li><span class="command">!tips</span></li>
+                    <li><span class="command">!clip</span></li>
+                </ul>
+            </div>
+
+            <!-- Fun & Interaction -->
+            <div class="box">
+                <h3>FUN &amp; INTERACTION</h3>
+                <ul>
+                    <li><span class="command">!chill</span></li>
+                    <li><span class="command">!first</span></li>
+                    <li><span class="command">!hug</span></li>
+                    <li><span class="command">!joke</span></li>
+                    <li><span class="command">!rez / !coffee</span></li>
+                    <li><span class="command">!slots</span></li>
+                    <li><span class="command">!bduel</span></li>
+                    <li><span class="command">!brules / !brule</span></li>
+                    <li><span class="command">!bhelp</span></li>
+                    <li><span class="command">!clip</span></li>
+                </ul>
+            </div>
+
+            <!-- Support & Links -->
+            <div class="box">
+                <h3>SUPPORT &amp; LINKS</h3>
+                <ul>
+                    <li><span class="command">!agb</span></li>
+                    <li><span class="command">!dbd</span></li>
+                    <li><span class="command">!roger / !goroger</span></li>
+                    <li><span class="command">!rogue / !energy</span></li>
+                    <li><span class="command">!steam</span></li>
+                    <li><span class="command">!xbox</span></li>
+                    <li><span class="command">!clip</span></li>
+                </ul>
+            </div>
+
+            <!-- Moderators -->
+            <div class="box">
+                <h3>MODERATORS</h3>
+                <ul>
+                    <li><span class="command">!so</span></li>
+                    <li><span class="command">!wtf</span></li>
+                </ul>
+            </div>
+
+            <!-- Stream Stats -->
+            <div class="box">
+                <h3>STREAM STATS</h3>
+                <ul>
+                    <li><span class="command">!clip</span></li>
+                    <li><span class="command">!xp</span></li>
+                    <li><span class="command">!uptime</span></li>
+                    <li><span class="command">!followage</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <a href="https://renesarjeant.github.io/" class="return">← Return to Main Page</a>
+
+        <footer>
+            ReneSarjeant — Official Capcom Creators Team • 22yr Army Vet
+        </footer>
     </div>
 </body>
 </html>

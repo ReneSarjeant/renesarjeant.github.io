@@ -1,194 +1,123 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ReneSarjeant — Channel Commands</title>
-  <meta name="description" content="Full list of chat commands for ReneSarjeant streams. Army vet, CAPCOM Creator, Resident Evil & variety gaming on Kick." />
-  <meta property="og:title" content="ReneSarjeant — Channel Commands" />
-  <meta property="og:description" content="Complete list of live chat commands." />
-  <meta property="og:url" content="https://renesarjeant.github.io/commands.html" />
-  <meta property="og:image" content="https://files.kick.com/images/user/210976/profile_image/conversion/ebadf1d0-a3a9-4e95-86d7-f28cec6e5363-fullsize.webp" />
-  <meta name="theme-color" content="#003087" />
-  <meta name="color-scheme" content="dark light" />
-  <link rel="icon" type="image/png" href="RSIcon.png">
-  <link rel="apple-touch-icon" href="RSIcon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#000;
-      --card:#101010;
-      --muted:#d0d0d0;
-      --text:#fff;
-      --kick:#ffd200;
-      --acc:#003087;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0}
-    body{
-      color:var(--text);
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-      background: url('https://tse1.mm.bing.net/th/id/OIP.1iTv9nAYrFgucfvI8RmRhAHaEo?pid=Api') center/cover no-repeat fixed;
-    }
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.65);
-      pointer-events: none;
-      z-index: 0;
-    }
-    .wrap{max-width:1100px;margin:0 auto;padding:28px;position:relative;z-index:1}
-    header{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:32px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:64px;height:64px;border-radius:14px;background:url('https://files.kick.com/images/user/210976/profile_image/conversion/ebadf1d0-a3a9-4e95-86d7-f28cec6e5363-fullsize.webp') center/cover no-repeat;box-shadow:0 0 20px var(--kick)}
-    .brand h1{font-size:1.4rem;margin:0;font-weight:800;letter-spacing:.2px;color:var(--kick)}
-    nav a{color:var(--kick);text-decoration:none;font-weight:600;margin-left:16px}
-    .hero h2{margin:0 0 16px;font-size:clamp(32px,5vw,52px);font-weight:800;color:var(--kick);text-align:center}
-    .commands-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:16px;
-    }
-    .cmd-card{
-      background:var(--card);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:16px;
-      padding:20px;
-    }
-    .cmd-card h3{
-      margin:0 0 12px;
-      color:var(--kick);
-      font-size:1.1rem;
-    }
-    .cmd-list{
-      list-style:none;
-      padding:0;
-      margin:0;
-    }
-    .cmd-list li{
-      padding:6px 0;
-      font-family:JetBrains Mono,monospace;
-      color:var(--muted);
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-    .cmd-list li:last-child{border-bottom:none}
-    .back-btn{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      background:rgba(255,210,0,.1);
-      color:var(--kick);
-      padding:12px 20px;
-      border-radius:9999px;
-      text-decoration:none;
-      font-weight:700;
-      margin:20px 0;
-    }
-    footer{margin-top:60px;color:var(--muted);font-size:13px;text-align:center}
-    @media (prefers-reduced-motion: reduce){.pulse::after{animation:none}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReneSarjeant — Channel Commands</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f0f0f;
+            color: #e0e0e0;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            color: #00ff9d;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #00ff9d;
+            padding-bottom: 15px;
+        }
+        .section {
+            background-color: #1a1a1a;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+            border-left: 5px solid #00ff9d;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 6px 0;
+            font-size: 1.1em;
+        }
+        a {
+            color: #00ff9d;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .return {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1.1em;
+        }
+    </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
-          <h1>ReneSarjeant</h1>
-          <div style="font:600 12px/1 JetBrains Mono,monospace;color:var(--muted)">Channel Commands</div>
-        </div>
-      </div>
-      <nav>
-        <a href="https://renesarjeant.github.io/" style="color:var(--text)">← Back to Home</a>
-      </nav>
-    </header>
-
-    <section style="text-align:center">
-      <div class="hero">
+    <h1>ReneSarjeant — Channel Commands</h1>
+    
+    <div class="section">
         <h2>Live Chat Commands</h2>
-        <p style="max-width:700px;margin:0 auto 32px;color:var(--muted);font-size:1.1rem">
-          Type any of these in chat during streams. Most are available on Kick, Twitch, and YouTube.
-        </p>
-      </div>
-    </section>
-
-    <div class="commands-grid">
-      <div class="cmd-card">
+        <p>Type any of these in chat during streams. Most are available on Kick, Twitch, and YouTube.</p>
+        
         <h3>General / Info</h3>
-        <ul class="cmd-list">
-          <li><code>!about</code></li>
-          <li><code>!commands</code></li>
-          <li><code>!discord</code></li>
-          <li><code>!english</code> / <code>!eng</code></li>
-          <li><code>!here</code></li>
-          <li><code>!hotline</code> / <code>!help</code></li>
-          <li><code>!level</code></li>
-          <li><code>!lfg</code></li>
-          <li><code>!lurk</code></li>
-          <li><code>!shout</code></li>
-          <li><code>!socials</code></li>
-          <li><code>!sss</code></li>
-          <li><code>!tips</code></li>
-          <li><code>!clip</code></li>
+        <ul>
+            <li>!about</li>
+            <li>!commands</li>
+            <li>!discord</li>
+            <li>!english / !eng</li>
+            <li>!here</li>
+            <li>!hotline / !help</li>
+            <li>!level</li>
+            <li>!lfg</li>
+            <li>!lurk</li>
+            <li>!shout</li>
+            <li>!socials</li>
+            <li>!sss</li>
+            <li>!tips</li>
+            <li>!clip</li>
         </ul>
-      </div>
-
-      <div class="cmd-card">
-        <h3>Fun &amp; Interaction</h3>
-        <ul class="cmd-list">
-          <li><code>!chill</code></li>
-          <li><code>!first</code></li>
-          <li><code>!hug</code></li>
-          <li><code>!joke</code></li>
-          <li><code>!rez</code> / <code>!coffee</code></li>
-          <li><code>!slots</code></li>          
-          <li><code>!bduel</code></li>
-          <li><code>!brules</code></li> / <code>!brule</code>
-          <li><code>!bhelp</code></li>
-          <li><code>!clip</code></li>
+        
+        <h3>Fun & Interaction</h3>
+        <ul>
+            <li>!chill</li>
+            <li>!first</li>
+            <li>!hug</li>
+            <li>!joke</li>
+            <li>!rez / !coffee</li>
+            <li>!slots</li>
+            <li>!bduel</li>
+            <li>!brules / !brule</li>
+            <li>!bhelp</li>
+            <li>!clip</li>
         </ul>
-      </div>
-
-      <div class="cmd-card">
-        <h3>Support &amp; Links</h3>
-        <ul class="cmd-list">
-          <li><code>!agb</code></li>
-          <li><code>!dbd</code></li>
-          <li><code>!roger</code> / <code>!goroger</code></li>
-          <li><code>!rogue</code> / <code>!energy</code></li>
-          <li><code>!steam</code></li>
-          <li><code>!xbox</code></li>
-          <li><code>!clip</code></li>
+        
+        <h3>Support & Links</h3>
+        <ul>
+            <li>!agb</li>
+            <li>!dbd</li>
+            <li>!roger / !goroger</li>
+            <li>!rogue / !energy</li>
+            <li>!steam</li>
+            <li>!xbox</li>
+            <li>!clip</li>
         </ul>
-      </div>
-
-      <div class="cmd-card">
+        
+        <h3>Moderators</h3>
+        <ul>
+            <li>!so</li>
+            <li>!wtf</li>
+        </ul>
+        
         <h3>Stream Stats</h3>
-        <ul class="cmd-list">
-          <li><code>!clip</code></li>
-          <li><code>!xp</code></li>
-          <li><code>!uptime</code></li>
-          <li><code>!followage</code></li>
+        <ul>
+            <li>!clip</li>
+            <li>!xp</li>
+            <li>!uptime</li>
+            <li>!followage</li>
         </ul>
-      </div>
     </div>
 
-    <center>
-      <a href="https://renesarjeant.github.io/" class="back-btn">← Return to Main Page</a>
-    </center>
-
-    <footer>
-      <div>© 2026 ReneSarjeant • All commands subject to stream rules • Hooah!</div>
-      <div style="margin-top:8px">
-        <a href="https://kick.com/renesarjeant" style="color:var(--kick)">Kick</a> • 
-        <a href="https://twitch.tv/renesarjeant" style="color:var(--kick)">Twitch</a> • 
-        <a href="https://www.youtube.com/c/renesarjeant" style="color:var(--kick)">YouTube</a>
-      </div>
-    </footer>
-  </div>
+    <div class="return">
+        <a href="https://renesarjeant.github.io/">← Return to Main Page</a>
+    </div>
 </body>
 </html>

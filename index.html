@@ -3,19 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ReneSarjeant — Official Capcom Creators Team • 22yr Army Vet • Live on Kick</title>
-  <meta name="description" content="22-year Army veteran, gamer grandpa, Official Capcom Creators Team member & unapologetic storyteller. Resident Evil, survival horror, variety gaming, veteran support, mental health awareness & real community — live on Kick." />
-  <meta property="og:title" content="ReneSarjeant — Official Capcom Creators Team • Live on Kick" />
-  <meta property="og:description" content="Army vet (22 yrs), gamer grandpa & proud Capcom Creators Team member streaming Resident Evil, survival horror, story-driven games, variety & real talk." />
-  <meta property="og:url" content="https://renesarjeant.github.io/" />
-  <meta property="og:image" content="https://files.kick.com/images/user/210976/profile_image/conversion/ebadf1d0-a3a9-4e95-86d7-f28cec6e5363-fullsize.webp" />
+  <title>ReneSarjeant — Live Commands</title>
+  <meta name="description" content="Official ReneSarjeant stream commands for Kick, Twitch, YouTube, veteran support, mental health awareness, and community interaction." />
   <meta name="theme-color" content="#003087" />
   <meta name="color-scheme" content="dark light" />
+
   <link rel="icon" type="image/png" href="RSIcon.png">
   <link rel="apple-touch-icon" href="RSIcon.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --bg:#000;
@@ -25,66 +24,269 @@
       --kick:#ffd200;
       --acc:#003087;
     }
+
     *{box-sizing:border-box}
     html,body{height:100%}
+
     body{
       margin:0;
       color:var(--text);
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-      background: url('https://tse1.mm.bing.net/th/id/OIP.1iTv9nAYrFgucfvI8RmRhAHaEo?pid=Api') center/cover no-repeat fixed;
+      background:url('https://tse1.mm.bing.net/th/id/OIP.1iTv9nAYrFgucfvI8RmRhAHaEo?pid=Api') center/cover no-repeat fixed;
     }
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.65);
-      pointer-events: none;
-      z-index: 0;
+
+    body::before{
+      content:'';
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,0.65);
+      pointer-events:none;
+      z-index:0;
     }
-    .wrap{max-width:1100px;margin:0 auto;padding:28px;position:relative;z-index:1}
-    header{display:flex;align-items:center;justify-content:space-between;gap:18px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:64px;height:64px;border-radius:14px;position:relative;background:url('https://files.kick.com/images/user/210976/profile_image/conversion/ebadf1d0-a3a9-4e95-86d7-f28cec6e5363-fullsize.webp') center/cover no-repeat;box-shadow:0 0 20px var(--kick), inset 0 0 10px rgba(0,0,0,.4)}
-    .brand h1{font-size:1.2rem;margin:0;font-weight:800;letter-spacing:.2px;color:var(--kick)}
-    .tag{font:600 12px/1 JetBrains Mono,monospace;color:var(--muted)}
-    nav{display:flex;gap:10px;flex-wrap:wrap}
-    .btn{appearance:none;border:none;padding:12px 16px;border-radius:14px;font-weight:700;letter-spacing:.2px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:transform .2s ease,box-shadow .2s ease}
-    .btn.primary{background:linear-gradient(180deg,var(--kick),#e5b800);color:#000;box-shadow:0 8px 20px rgba(255,210,0,.25)}
-    .btn.primary:hover{transform:translateY(-2px)}
-    .btn.ghost{background:rgba(255,255,255,.04);color:var(--text);border:1px solid rgba(255,255,255,.08)}
-    .btn.ghost:hover{background:rgba(255,255,255,.07)}
-    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center;margin:34px 0}
-    .hero h2{margin:0 0 10px;font-size:clamp(28px,4vw,46px);font-weight:800;color:var(--kick)}
-    .hero p{margin:0 0 22px;color:var(--muted);font-size:clamp(14px,2vw,18px)}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:18px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .tile{padding:18px;border-radius:16px;background:var(--card);border:1px solid rgba(255,255,255,.06)}
-    .meta{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:14px}
-    .pulse{position:relative}
-    .pulse::after{content:"";position:absolute;inset:-2px;border-radius:20px;box-shadow:0 0 0 0 rgba(255,210,0,.35);animation:pulse 2.4s infinite}
-    @keyframes pulse{to{box-shadow:0 0 0 22px rgba(255,210,0,0)}}
-    .vids a{display:block;text-decoration:none;color:inherit}
-    .vids .v{display:flex;gap:12px;align-items:flex-start;padding:12px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}
-    .v small{color:var(--muted)}
-    .causes-wrapper{display:flex;justify-content:center;margin-top:12px}
-    .causes{display:flex;gap:20px;justify-content:center}
-    .cause{flex:1;min-width:250px;background:var(--card);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.06);text-align:center}
-    .cause a{color:var(--kick);font-weight:700;text-decoration:none}
-    .commands-link {
-      color: var(--kick);
-      text-decoration: none;
-      font-weight: 700;
+
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:28px;
+      position:relative;
+      z-index:1;
     }
-    .commands-link:hover {
-      text-decoration: underline;
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
     }
-    footer{margin:34px 0 12px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
-    @media (max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.causes{flex-direction:column;align-items:center}}
-    @media (max-width:620px){.grid{grid-template-columns:1fr}}
-    @media (prefers-reduced-motion: reduce){.pulse::after{animation:none}}
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .logo{
+      width:64px;
+      height:64px;
+      border-radius:14px;
+      position:relative;
+      background:url('https://files.kick.com/images/user/210976/profile_image/conversion/ebadf1d0-a3a9-4e95-86d7-f28cec6e5363-fullsize.webp') center/cover no-repeat;
+      box-shadow:0 0 20px var(--kick), inset 0 0 10px rgba(0,0,0,.4);
+    }
+
+    .brand h1{
+      font-size:1.2rem;
+      margin:0;
+      font-weight:800;
+      letter-spacing:.2px;
+      color:var(--kick);
+    }
+
+    .tag{
+      font:600 12px/1 JetBrains Mono,monospace;
+      color:var(--muted);
+    }
+
+    nav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      appearance:none;
+      border:none;
+      padding:12px 16px;
+      border-radius:14px;
+      font-weight:700;
+      letter-spacing:.2px;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
+    }
+
+    .btn.primary{
+      background:linear-gradient(180deg,var(--kick),#e5b800);
+      color:#000;
+      box-shadow:0 8px 20px rgba(255,210,0,.25);
+    }
+
+    .btn.primary:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn.ghost{
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .btn.ghost:hover{
+      background:rgba(255,255,255,.07);
+    }
+
+    .pulse{
+      position:relative;
+    }
+
+    .pulse::after{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      border-radius:20px;
+      box-shadow:0 0 0 0 rgba(255,210,0,.35);
+      animation:pulse 2.4s infinite;
+    }
+
+    @keyframes pulse{
+      to{box-shadow:0 0 0 22px rgba(255,210,0,0)}
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:26px;
+      align-items:center;
+      margin:34px 0;
+    }
+
+    .hero h2{
+      margin:0 0 10px;
+      font-size:clamp(28px,4vw,46px);
+      font-weight:800;
+      color:var(--kick);
+    }
+
+    .hero p{
+      margin:0 0 22px;
+      color:var(--muted);
+      font-size:clamp(14px,2vw,18px);
+      line-height:1.55;
+    }
+
+    .meta{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;
+      padding:18px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .tile{
+      padding:18px;
+      border-radius:16px;
+      background:var(--card);
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    .tile h3{
+      margin:0 0 12px;
+      color:var(--kick);
+    }
+
+    .command-list{
+      display:grid;
+      gap:10px;
+    }
+
+    .command{
+      padding:11px 12px;
+      border-radius:14px;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    code{
+      font-family:JetBrains Mono,monospace;
+      color:var(--kick);
+      font-weight:600;
+    }
+
+    .command span{
+      display:block;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.35;
+      margin-top:4px;
+    }
+
+    .wide{
+      grid-column:1 / -1;
+    }
+
+    footer{
+      margin:34px 0 12px;
+      color:var(--muted);
+      font-size:13px;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    a{
+      color:var(--kick);
+    }
+
+    @media (max-width:900px){
+      header{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .hero{
+        grid-template-columns:1fr;
+      }
+
+      .grid{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (max-width:620px){
+      .wrap{
+        padding:20px;
+      }
+
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      nav{
+        width:100%;
+      }
+
+      .btn{
+        width:100%;
+        justify-content:center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .pulse::after{animation:none}
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <header>
@@ -95,87 +297,131 @@
           <div class="tag">Official Capcom Creators Team • 22yr Army Vet • Gamer Grandpa</div>
         </div>
       </div>
+
       <nav aria-label="Primary">
         <a class="btn primary" href="https://kick.com/renesarjeant" target="_blank" rel="noopener">▶ Watch on Kick</a>
+        <a class="btn ghost" href="index.html">Home</a>
         <a class="btn ghost" href="https://kick.com/renesarjeant/about" target="_blank" rel="noopener">Kick About</a>
-        <a class="btn ghost" href="https://www.youtube.com/c/renesarjeant" target="_blank" rel="noopener">YouTube</a>
-        <a class="btn ghost" href="https://twitch.tv/renesarjeant" target="_blank" rel="noopener">Twitch</a>
-        <a class="btn ghost" href="https://x.com/renesarjeant" target="_blank" rel="noopener">X / Twitter</a>
-        <a class="btn primary" href="https://ko-fi.com/renesarjeant" target="_blank" rel="noopener" aria-label="Donate on Ko-fi">☕ Donate</a>
+        <a class="btn primary" href="https://ko-fi.com/renesarjeant" target="_blank" rel="noopener">☕ Donate</a>
       </nav>
     </header>
 
     <section class="hero">
       <div>
-        <h2>Gamer First. Heart Always.</h2>
-        <p>22-year Army veteran, gamer grandpa, Official Capcom Creators Team member, and unapologetic storyteller. Streaming Resident Evil, survival horror, story-driven games, Dead by Daylight, variety chaos, veteran support, mental health awareness, and real community—live primarily on Kick.</p>
+        <h2>Live Chat Commands</h2>
+        <p>
+          Commands for the ReneSarjeant community. Use these during streams for support resources,
+          channel links, shoutouts, fun chat tools, coffee, causes, and quick stream info.
+        </p>
         <div class="meta">
-          <div>⚡ Live schedule: Mon–Sun at Noon ET (check Kick for updates)</div>
-          <div>🧟 Resident Evil Saturday: every Saturday at Noon ET</div>
-          <div>🎯 Mission: veterans, mental health, and life after service</div>
+          <div>💬 Built for Kick chat</div>
+          <div>🎮 Horror, Capcom, DBD & variety</div>
+          <div>🎯 Veterans, mental health, and real community</div>
         </div>
       </div>
+
       <div class="card">
-        <div style="font-size:14px;color:var(--muted);margin-bottom:8px">Channel Snapshot</div>
-        <div class="vids">
-          <a class="v" href="https://kick.com/renesarjeant/about" target="_blank" rel="noopener">
-            <div>🎖️</div>
-            <div>
-              <div><strong>22-year Army veteran</strong></div>
-              <small>Official Capcom Creators Team member • gamer grandpa • storyteller</small>
-            </div>
-          </a>
-          <br />
-          <a class="v" href="https://kick.com/renesarjeant/videos" target="_blank" rel="noopener">
-            <div>🎮</div>
-            <div>
-              <div><strong>Variety chaos daily</strong></div>
-              <small>Resident Evil, DBD, survival horror & story-driven games</small>
-            </div>
-          </a>
-          <br />
-          <a class="v" href="https://kick.com/renesarjeant/about" target="_blank" rel="noopener">
-            <div>💚</div>
-            <div>
-              <div><strong>Backs Always Give Back and ROGER</strong></div>
-              <small>Support for veterans, mental health, and life after the uniform</small>
-            </div>
-          </a>
+        <div style="font-size:14px;color:var(--muted);margin-bottom:8px">Quick Picks</div>
+        <div class="command-list">
+          <div class="command"><code>!mission</code><span>Gaming, veterans, mental health, and real community.</span></div>
+          <div class="command"><code>!988</code><span>Crisis support information.</span></div>
+          <div class="command"><code>!discord</code><span>Join the community server.</span></div>
+          <div class="command"><code>!coffee</code><span>Coffee, energy, and streamer fuel.</span></div>
         </div>
       </div>
     </section>
 
-    <section class="grid" aria-label="Info">
+    <section class="grid" aria-label="Commands">
+<div class="tile">
+  <h3>Community</h3>
+  <div class="command-list">
+    <div class="command"><code>!about</code><span>Learn about ReneSarjeant and the channel.</span></div>
+    <div class="command"><code>!tip / !tips</code><span>Support the stream through Ko-fi.</span></div>
+    <div class="command"><code>!mission</code><span>Gaming, veterans, mental health, and real community.</span></div>
+    <div class="command"><code>!veteran</code><span>22-year Army veteran background and channel purpose.</span></div>
+    <div class="command"><code>!discord</code><span>Join the community server.</span></div>
+    <div class="command"><code>!socials</code><span>Find ReneSarjeant across platforms.</span></div>
+    <div class="command"><code>!here</code><span>Let chat know you are hanging out.</span></div>
+    <div class="command"><code>!lurk</code><span>Kick back in the shadows and chill.</span></div>
+    <div class="command"><code>!chill</code><span>Relax, watch, and enjoy the stream.</span></div>
+  </div>
+</div>
       <div class="tile">
-        <h3 style="margin:0 0 8px">About</h3>
-        <p style="margin:0;color:var(--muted)">22-year Army veteran, gamer grandpa, unapologetic storyteller, and proud Official Capcom Creators Team member. Survival horror, hope, straight talk, variety gaming, and community first—always.</p>
+        <h3>Support & Causes</h3>
+        <div class="command-list">
+          <div class="command"><code>!mentalhealth</code><span>Mental health support and encouragement.</span></div>
+          <div class="command"><code>!988</code><span>Crisis support information.</span></div>
+          <div class="command"><code>!hotline</code><span>Helpful support resources.</span></div>
+          <div class="command"><code>!help</code><span>Quick help and support info.</span></div>
+          <div class="command"><code>!agb</code><span>Always Give Back veteran support.</span></div>
+          <div class="command"><code>!roger / !goroger</code><span>ROGER mental wellness support.</span></div>
+          <div class="command"><code>!sss</code><span>Stop Soldier Suicide information.</span></div>
+        </div>
       </div>
+
       <div class="tile">
-        <h3 style="margin:0 0 8px">Live Commands</h3>
-        <p style="margin:0;color:var(--muted)">Click <a href="https://renesarjeant.github.io/commands.html" target="_blank" rel="noopener" class="commands-link">!commands</a> for the full list.<br>Common shortcuts: <code>!agb</code> • <code>!roger</code> • <code>!sss</code> • <code>!hotline</code> • <code>!988</code> • <code>!discord</code> • <code>!tip</code> • <code>!here</code> • <code>!rez</code> • <code>!rogue</code></p>
+        <h3>Stream Info</h3>
+        <div class="command-list">
+          <div class="command"><code>!commands</code><span>Shows this command page.</span></div>
+          <div class="command"><code>!capcom</code><span>Official Capcom Creators Team info.</span></div>
+          <div class="command"><code>!dbd</code><span>Dead by Daylight stream info.</span></div>
+          <div class="command"><code>!steam</code><span>Steam information.</span></div>
+          <div class="command"><code>!xbox</code><span>Xbox information.</span></div>
+          <div class="command"><code>!english / !eng</code><span>English chat reminder.</span></div>
+          <div class="command"><code>!clip</code><span>Clip the moment when available.</span></div>
+        </div>
       </div>
+
       <div class="tile">
-        <h3 style="margin:0 0 8px">Join In</h3>
-        <p style="margin:0;color:var(--muted)">You made it here? You’re family now. Drop in, say hello, and keep it respectful. We lift each other up here.</p>
+        <h3>Fun & Interaction</h3>
+        <div class="command-list">
+          <div class="command"><code>!first</code><span>Claim first in chat.</span></div>
+          <div class="command"><code>!hug</code><span>Send somebody some community love.</span></div>
+          <div class="command"><code>!joke</code><span>Drop a joke into chat.</span></div>
+          <div class="command"><code>!coffee / !rez</code><span>Coffee time. Fuel the mission.</span></div>
+          <div class="command"><code>!rogue / !energy</code><span>Rogue Energy command.</span></div>
+        </div>
       </div>
-      <div class="tile" style="grid-column:1 / -1;">
-        <center>
-          <h3 style="margin:0 0 8px;">Our Causes</h3>
-          <div class="causes-wrapper">
-            <div class="causes">
-              <div class="cause"><strong>ROGER</strong><br><a href="https://goroger.org" target="_blank" rel="noopener">goroger.org</a><p style="margin:4px 0 0;color:var(--muted)">Free, confidential mental wellness support for veterans and service members.</p></div>
-              <div class="cause"><strong>Always Give Back</strong><br><a href="https://alwaysgiveback.org" target="_blank" rel="noopener">alwaysgiveback.org</a><p style="margin:4px 0 0;color:var(--muted)">Gaming PCs, care packages, and support for disabled veterans and active-duty members.</p></div>
-            </div>
-          </div>
-        </center>
+
+      <div class="tile">
+        <h3>Bot & Games</h3>
+        <div class="command-list">
+          <div class="command"><code>!slots</code><span>Chat game command.</span></div>
+          <div class="command"><code>!bduel</code><span>Bot duel command.</span></div>
+          <div class="command"><code>!brules / !brulw</code><span>Bot rules command.</span></div>
+          <div class="command"><code>!bhelp</code><span>Bot help command.</span></div>
+          <div class="command"><code>!level</code><span>Check level or rank info.</span></div>
+          <div class="command"><code>!xp</code><span>Check XP info.</span></div>
+        </div>
+      </div>
+
+      <div class="tile">
+        <h3>Moderators & Stats</h3>
+        <div class="command-list">
+          <div class="command"><code>!so</code><span>Moderator shoutout command.</span></div>
+          <div class="command"><code>!wtf</code><span>Moderator.</span></div>
+          <div class="command"><code>!shout</code><span>Follows Shoutout command.</span></div>
+          <div class="command"><code>!uptime</code><span>See how long the stream has been live.</span></div>
+          <div class="command"><code>!followage</code><span>Check how long someone has followed.</span></div>
+        </div>
+      </div>
+
+      <div class="tile wide">
+        <h3>Command Notes</h3>
+        <p style="margin:0;color:var(--muted);line-height:1.55">
+          More commands and features are coming online. Some commands may depend on the stream bot,
+          platform tools, or moderator settings. When in doubt, ask in chat and someone in the fireteam
+          will square you away.
+        </p>
       </div>
     </section>
 
     <footer>
       <div>© 2026 ReneSarjeant. All rights reserved. renesarjeant.github.io</div>
-      <div>Updated May 2026 — matched latest Kick, Twitch & YouTube profiles. Schedule now at Noon ET.</div>
+      <div>Updated May 2026 — command page matched to main site style.</div>
     </footer>
   </div>
+
   <noscript>JavaScript is disabled. Links still work, Hooah.</noscript>
 </body>
 </html>

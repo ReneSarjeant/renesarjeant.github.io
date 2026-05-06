@@ -1,224 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReneSarjeant — Channel Commands</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReneSarjeant — Channel Commands</title>
+  <meta name="description" content="Official ReneSarjeant stream commands for Kick, Twitch, and YouTube." />
 
-        body {
-            background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(26, 0, 0, 0.95)),
-                        url('https://renesarjeant.github.io/assets/bg-commands.jpg') center/cover no-repeat fixed;
-            color: #ffcc00;
-            font-family: 'Press Start 2P', system-ui;
-            margin: 0;
-            padding: 20px;
-            line-height: 1.6;
-            min-height: 100vh;
-        }
+  <style>
+    :root {
+      --bg: #07090f;
+      --panel: rgba(18, 24, 38, 0.92);
+      --panel2: rgba(10, 14, 24, 0.95);
+      --text: #f4f7fb;
+      --muted: #b8c0cc;
+      --gold: #d6a84f;
+      --blue: #2f7cff;
+      --red: #d62828;
+      --green: #53fc18;
+      --border: rgba(255,255,255,0.12);
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: rgba(15, 0, 0, 0.75);
-            border: 4px solid #ff0000;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 0 30px rgba(255, 0, 0, 0.6);
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            border-bottom: 4px solid #ff0000;
-            padding-bottom: 20px;
-        }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.86)),
+        radial-gradient(circle at top left, rgba(47,124,255,.22), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(214,168,79,.18), transparent 35%),
+        var(--bg);
+    }
 
-        h1 {
-            font-size: 2.8rem;
-            color: #ff0000;
-            text-shadow: 0 0 12px #ff0000, 0 0 20px #ff0000;
-            margin: 10px 0;
-            letter-spacing: 4px;
-        }
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px;
+    }
 
-        .subtitle {
-            font-size: 1.2rem;
-            color: #ff9999;
-            margin-top: -10px;
-        }
+    header {
+      text-align: center;
+      padding: 34px 20px 26px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: 22px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.35);
+    }
 
-        .intro {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            color: #ff9999;
-            font-size: 1.05rem;
-        }
+    h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 6vw, 4.8rem);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 25px;
-        }
+    .red {
+      color: var(--red);
+    }
 
-        .box {
-            background: rgba(30, 0, 0, 0.9);
-            border: 3px solid #ff0000;
-            border-radius: 8px;
-            padding: 22px;
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
-        }
+    .tagline {
+      margin-top: 10px;
+      color: var(--gold);
+      font-size: 1.05rem;
+      font-weight: bold;
+    }
 
-        .box h3 {
-            color: #ffcc00;
-            margin-top: 0;
-            font-size: 1.35rem;
-            text-align: center;
-            border-bottom: 2px solid #ffcc00;
-            padding-bottom: 10px;
-            text-shadow: 0 0 8px #ffcc00;
-        }
+    .intro {
+      max-width: 760px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
 
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+    .nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
 
-        li {
-            padding: 10px 0;
-            border-bottom: 1px dashed rgba(255, 204, 0, 0.3);
-            font-size: 1.05rem;
-        }
+    .btn {
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.07);
+      padding: 11px 16px;
+      border-radius: 999px;
+      font-weight: bold;
+      transition: .2s ease;
+    }
 
-        li:last-child {
-            border-bottom: none;
-        }
+    .btn:hover {
+      transform: translateY(-2px);
+      background: rgba(47,124,255,.25);
+      border-color: rgba(47,124,255,.6);
+    }
 
-        .command {
-            color: #00ffcc;
-            font-weight: bold;
-        }
+    .btn.kick {
+      color: #071007;
+      background: var(--green);
+      border-color: var(--green);
+    }
 
-        .return {
-            display: block;
-            text-align: center;
-            margin: 50px auto 20px;
-            font-size: 1.15rem;
-            color: #ff9999;
-            text-decoration: none;
-        }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
 
-        .return:hover {
-            color: #ffcc00;
-            text-shadow: 0 0 10px #ffcc00;
-        }
+    .card {
+      border: 1px solid var(--border);
+      background: var(--panel2);
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: 0 14px 34px rgba(0,0,0,.28);
+    }
 
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            color: #666;
-            font-size: 0.85rem;
-        }
+    .card h2 {
+      margin: 0 0 14px;
+      color: var(--gold);
+      font-size: 1rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
 
-        @media (max-width: 768px) {
-            .grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    .commands {
+      display: grid;
+      gap: 10px;
+    }
+
+    .cmd {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    code {
+      color: var(--green);
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .desc {
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      margin-top: 24px;
+      padding: 22px;
+      border-top: 1px solid var(--border);
+      font-size: .95rem;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    @media (max-width: 760px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .wrap {
+        padding: 18px 12px;
+      }
+
+      header {
+        padding: 26px 14px;
+      }
+
+      .cmd {
+        flex-direction: column;
+        gap: 4px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <h1>RENESARJEANT</h1>
-            <p class="subtitle">CHANNEL COMMANDS</p>
-        </header>
+  <div class="wrap">
+    <header>
+      <h1><span class="red">R</span>ene<span class="red">S</span>arjeant</h1>
+      <div class="tagline">Official Capcom Creators Team • 22yr Army Vet • Gamer Grandpa</div>
 
-        <p class="intro">
-            Type any of these in chat during streams.<br>
-            Most commands work on Kick, Twitch, and YouTube.
-        </p>
+      <p class="intro">
+        Commands for the ReneSarjeant community. Use these during streams for links,
+        support resources, fun chat tools, shoutouts, and quick channel info.
+      </p>
 
-        <div class="grid">
-            <!-- General / Info -->
-            <div class="box">
-                <h3>GENERAL / INFO</h3>
-                <ul>
-                    <li><span class="command">!about</span></li>
-                    <li><span class="command">!commands</span></li>
-                    <li><span class="command">!discord</span></li>
-                    <li><span class="command">!english / !eng</span></li>
-                    <li><span class="command">!here</span></li>
-                    <li><span class="command">!hotline / !help</span></li>
-                    <li><span class="command">!level</span></li>
-                    <li><span class="command">!lfg</span></li>
-                    <li><span class="command">!lurk</span></li>
-                    <li><span class="command">!shout</span></li>
-                    <li><span class="command">!socials</span></li>
-                    <li><span class="command">!sss</span></li>
-                    <li><span class="command">!tips</span></li>
-                    <li><span class="command">!clip</span></li>
-                </ul>
-            </div>
+      <div class="nav">
+        <a class="btn kick" href="https://kick.com/renesarjeant">▶ Watch on Kick</a>
+        <a class="btn" href="index.html">Main Page</a>
+        <a class="btn" href="https://kick.com/renesarjeant/about">Kick About</a>
+        <a class="btn" href="https://ko-fi.com/renesarjeant">☕ Donate</a>
+      </div>
+    </header>
 
-            <!-- Fun & Interaction -->
-            <div class="box">
-                <h3>FUN & INTERACTION</h3>
-                <ul>
-                    <li><span class="command">!chill</span></li>
-                    <li><span class="command">!first</span></li>
-                    <li><span class="command">!hug</span></li>
-                    <li><span class="command">!joke</span></li>
-                    <li><span class="command">!rez / !coffee</span></li>
-                    <li><span class="command">!slots</span></li>
-                    <li><span class="command">!bduel</span></li>
-                    <li><span class="command">!brules / !brule</span></li>
-                    <li><span class="command">!bhelp</span></li>
-                </ul>
-            </div>
-
-            <!-- Support & Links -->
-            <div class="box">
-                <h3>SUPPORT & LINKS</h3>
-                <ul>
-                    <li><span class="command">!agb</span></li>
-                    <li><span class="command">!dbd</span></li>
-                    <li><span class="command">!roger / !goroger</span></li>
-                    <li><span class="command">!rogue / !energy</span></li>
-                    <li><span class="command">!steam</span></li>
-                    <li><span class="command">!xbox</span></li>
-                </ul>
-            </div>
-
-            <!-- Moderators -->
-            <div class="box">
-                <h3>MODERATORS</h3>
-                <ul>
-                    <li><span class="command">!so</span></li>
-                    <li><span class="command">!wtf</span></li>
-                </ul>
-            </div>
-
-            <!-- Stream Stats -->
-            <div class="box">
-                <h3>STREAM STATS</h3>
-                <ul>
-                    <li><span class="command">!clip</span></li>
-                    <li><span class="command">!xp</span></li>
-                    <li><span class="command">!uptime</span></li>
-                    <li><span class="command">!followage</span></li>
-                </ul>
-            </div>
+    <main class="grid">
+      <section class="card">
+        <h2>Community</h2>
+        <div class="commands">
+          <div class="cmd"><code>!about</code><span class="desc">Learn about ReneSarjeant and the channel.</span></div>
+          <div class="cmd"><code>!mission</code><span class="desc">Gaming, veterans, mental health, and real community.</span></div>
+          <div class="cmd"><code>!veteran</code><span class="desc">22-year Army veteran background and channel purpose.</span></div>
+          <div class="cmd"><code>!discord</code><span class="desc">Join the community server.</span></div>
+          <div class="cmd"><code>!socials</code><span class="desc">Find ReneSarjeant across platforms.</span></div>
+          <div class="cmd"><code>!here</code><span class="desc">Let chat know you are hanging out.</span></div>
+          <div class="cmd"><code>!lurk</code><span class="desc">Kick back in the shadows and chill.</span></div>
+          <div class="cmd"><code>!chill</code><span class="desc">Another way to lurk and relax with the crew.</span></div>
         </div>
+      </section>
 
-        <a href="https://renesarjeant.github.io/" class="return">← Return to Main Page</a>
+      <section class="card">
+        <h2>Support & Causes</h2>
+        <div class="commands">
+          <div class="cmd"><code>!mentalhealth</code><span class="desc">Mental health support and encouragement.</span></div>
+          <div class="cmd"><code>!988</code><span class="desc">Crisis support information.</span></div>
+          <div class="cmd"><code>!hotline</code><span class="desc">Helpful support resources.</span></div>
+          <div class="cmd"><code>!help</code><span class="desc">Quick help and support info.</span></div>
+          <div class="cmd"><code>!agb</code><span class="desc">Always Give Back veteran support.</span></div>
+          <div class="cmd"><code>!roger</code><span class="desc">ROGER mental wellness support.</span></div>
+          <div class="cmd"><code>!goroger</code><span class="desc">Alternate ROGER command.</span></div>
+          <div class="cmd"><code>!sss</code><span class="desc">Stop Soldier Suicide information.</span></div>
+        </div>
+      </section>
 
-        <footer>
-            ReneSarjeant — Official Capcom Creators Team • 22yr Army Vet
-        </footer>
-    </div>
+      <section class="card">
+        <h2>Stream Info</h2>
+        <div class="commands">
+          <div class="cmd"><code>!commands</code><span class="desc">Shows this command page.</span></div>
+          <div class="cmd"><code>!capcom</code><span class="desc">Official Capcom Creators Team info.</span></div>
+          <div class="cmd"><code>!dbd</code><span class="desc">Dead by Daylight stream info.</span></div>
+          <div class="cmd"><code>!steam</code><span class="desc">Steam information.</span></div>
+          <div class="cmd"><code>!xbox</code><span class="desc">Xbox information.</span></div>
+          <div class="cmd"><code>!english</code><span class="desc">English chat reminder.</span></div>
+          <div class="cmd"><code>!eng</code><span class="desc">Short version of the English command.</span></div>
+          <div class="cmd"><code>!clip</code><span class="desc">Clip the moment when available.</span></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Fun & Interaction</h2>
+        <div class="commands">
+          <div class="cmd"><code>!first</code><span class="desc">Claim first in chat.</span></div>
+          <div class="cmd"><code>!hug</code><span class="desc">Send somebody a little community love.</span></div>
+          <div class="cmd"><code>!joke</code><span class="desc">Drop a joke into chat.</span></div>
+          <div class="cmd"><code>!coffee</code><span class="desc">Coffee time. Fuel the mission.</span></div>
+          <div class="cmd"><code>!rez</code><span class="desc">Self Rez Coffee command.</span></div>
+          <div class="cmd"><code>!rogue</code><span class="desc">Rogue Energy command.</span></div>
+          <div class="cmd"><code>!energy</code><span class="desc">Alternate Rogue Energy command.</span></div>
+          <div class="cmd"><code>!slots</code><span class="desc">Chat game command.</span></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Bot & Games</h2>
+        <div class="commands">
+          <div class="cmd"><code>!bduel</code><span class="desc">Bot duel command.</span></div>
+          <div class="cmd"><code>!brules</code><span class="desc">Bot rules command.</span></div>
+          <div class="cmd"><code>!brule</code><span class="desc">Alternate bot rules command.</span></div>
+          <div class="cmd"><code>!bhelp</code><span class="desc">Bot help command.</span></div>
+          <div class="cmd"><code>!level</code><span class="desc">Check level or rank info.</span></div>
+          <div class="cmd"><code>!xp</code><span class="desc">Check XP info.</span></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Moderators & Stats</h2>
+        <div class="commands">
+          <div class="cmd"><code>!so</code><span class="desc">Moderator shoutout command.</span></div>
+          <div class="cmd"><code>!shout</code><span class="desc">Shoutout command.</span></div>
+          <div class="cmd"><code>!wtf</code><span class="desc">Mod/community command.</span></div>
+          <div class="cmd"><code>!uptime</code><span class="desc">See how long the stream has been live.</span></div>
+          <div class="cmd"><code>!followage</code><span class="desc">Check how long someone has followed.</span></div>
+          <div class="cmd"><code>!tips</code><span class="desc">Support the stream.</span></div>
+          <div class="cmd"><code>!tip</code><span class="desc">Alternate support command.</span></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        More commands and features coming online.
+      </p>
+      <p>
+        © 2026 ReneSarjeant. All rights reserved. 
+        <a href="index.html">Return to Main Page</a>
+      </p>
+    </footer>
+  </div>
 </body>
 </html>

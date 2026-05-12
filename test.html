@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ReneSarjeant — Live Commands</title>
+  <meta name="description" content="Official ReneSarjeant stream commands for Kick, Twitch, YouTube, veteran support, mental health awareness, and community interaction." />
+  <meta name="theme-color" content="#003087" />
+  <meta name="color-scheme" content="dark light" />
+
+  <link rel="icon" type="image/png" href="RSIcon.png">
+  <link rel="apple-touch-icon" href="RSIcon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#000;
+      --card:#101010;
+      --muted:#d0d0d0;
+      --text:#fff;
+      --kick:#ffd200;
+      --acc:#003087;
+    }
+
+    [data-theme="light"]{
+      --bg:#f8f9fa;
+      --card:#ffffff;
+      --muted:#444;
+      --text:#111;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+
+    body{
+      margin:0;
+      color:var(--text);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      background:url('https://tse1.mm.bing.net/th/id/OIP.1iTv9nAYrFgucfvI8RmRhAHaEo?pid=Api') center/cover no-repeat fixed;
+    }
+
+    body::before{
+      content:'';
+      position:fixed;
+      top:0; left:0; width:100%; height:100%;
+      background:rgba(0,0,0,0.65);
+      pointer-events:none;
+      z-index:0;
+    }
+
+    [data-theme="light"] body::before{
+      background:rgba(0,0,0,0.35);
+    }
+
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:28px;
+      position:relative;
+      z-index:1;
+    }
+
+    /* ... (all your existing styles stay the same until cards/tiles) */
+
+    .card, .tile, .command{
+      background:var(--card);
+      border:1px solid rgba(255,255,255,.08);
+      color:var(--text);
+    }
+
+    [data-theme="light"] .card,
+    [data-theme="light"] .tile,
+    [data-theme="light"] .command{
+      border-color:rgba(0,0,0,.08);
+    }
+
+    .hero p, .meta, .command span{
+      color:var(--muted);
+    }
+
+    /* Toggle Button */
+    .theme-toggle{
+      position:fixed;
+      top:20px;
+      right:20px;
+      z-index:100;
+      padding:10px 14px;
+      background:rgba(0,0,0,0.6);
+      border:1px solid rgba(255,255,255,0.1);
+      border-radius:999px;
+      color:white;
+      font-size:14px;
+      cursor:pointer;
+    }
+
+    [data-theme="light"] .theme-toggle{
+      background:rgba(255,255,255,0.9);
+      color:#111;
+      border-color:rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">☀️ Light Mode</button>
+
+  <div class="wrap">
+    <!-- Your entire existing content stays exactly the same here -->
+    <!-- (header, hero, grid, footer, etc.) -->
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      const toggleBtn = document.querySelector('.theme-toggle');
+      
+      if (body.getAttribute('data-theme') === 'light') {
+        body.removeAttribute('data-theme');
+        toggleBtn.textContent = '☀️ Light Mode';
+      } else {
+        body.setAttribute('data-theme', 'light');
+        toggleBtn.textContent = '🌙 Dark Mode';
+      }
+    }
+  </script>
+</body>
+</html>

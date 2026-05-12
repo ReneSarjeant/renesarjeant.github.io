@@ -17,16 +17,13 @@
 
   <style>
     :root{
-      --bg:#000;
       --card:#101010;
       --muted:#d0d0d0;
       --text:#fff;
       --kick:#ffd200;
-      --acc:#003087;
     }
 
     [data-theme="light"]{
-      --bg:#f8f9fa;
       --card:#ffffff;
       --muted:#333;
       --text:#111;
@@ -62,7 +59,7 @@
       z-index:1;
     }
 
-    /* === Your original styles (unchanged) === */
+    /* === YOUR ORIGINAL STYLES (kept 99% the same) === */
     header{display:flex; align-items:center; justify-content:space-between; gap:18px;}
     .brand{display:flex; align-items:center; gap:12px;}
     .logo{width:64px; height:64px; border-radius:14px; background:url('https://files.kick.com/images/user/210976/profile_image/conversion/ebadf1d0-a3a9-4e95-86d7-f28cec6e5363-fullsize.webp') center/cover; box-shadow:0 0 20px var(--kick), inset 0 0 10px rgba(0,0,0,.4);}
@@ -93,14 +90,14 @@
     [data-theme="light"] .card,
     [data-theme="light"] .tile,
     [data-theme="light"] .command{
-      border-color:rgba(0,0,0,.1);
+      border-color:rgba(0,0,0,.12);
     }
 
     .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
     .tile h3{margin:0 0 12px; color:var(--kick);}
     .command-list{display:grid; gap:10px;}
     .command{padding:11px 12px; border-radius:14px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.06);}
-    [data-theme="light"] .command{background:rgba(0,0,0,.03);}
+    [data-theme="light"] .command{background:rgba(0,0,0,.04);}
 
     code{font-family:JetBrains Mono,monospace; color:var(--kick); font-weight:600;}
     .command span{display:block; color:var(--muted); font-size:14px; line-height:1.35; margin-top:4px;}
@@ -109,11 +106,9 @@
     footer{margin:34px 0 12px; color:var(--muted); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;}
     a{color:var(--kick);}
 
-    /* Theme Toggle */
+    /* Light Mode Toggle */
     .theme-toggle{
-      position:fixed;
-      top:20px; right:20px;
-      z-index:100;
+      position:fixed; top:20px; right:20px; z-index:100;
       padding:10px 16px;
       background:rgba(0,0,0,0.6);
       border:1px solid rgba(255,255,255,.1);
@@ -145,7 +140,6 @@
   <button class="theme-toggle" onclick="toggleTheme()">☀️ Light Mode</button>
 
   <div class="wrap">
-    <!-- === YOUR ORIGINAL CONTENT (unchanged) === -->
     <header>
       <div class="brand">
         <div class="logo pulse" aria-hidden="true"></div>
@@ -185,7 +179,6 @@
     </section>
 
     <section class="grid" aria-label="Commands">
-      <!-- All your tiles here (Community, Support & Causes, etc.) – they are unchanged -->
       <div class="tile">
         <h3>Community</h3>
         <div class="command-list">
@@ -200,8 +193,77 @@
           <div class="command"><code>!here / !lurk / !chill</code><span>Let chat know you are hanging out.</span></div>
         </div>
       </div>
-      <!-- ... (the rest of your tiles are exactly the same as your original) ... -->
-      <!-- I kept them all but shortened here for message length – copy the full ones from your current file if needed -->
+
+      <div class="tile">
+        <h3>Support & Causes</h3>
+        <div class="command-list">
+          <div class="command"><code>!mentalhealth</code><span>Mental health support and encouragement.</span></div>
+          <div class="command"><code>!988</code><span>Crisis support information.</span></div>
+          <div class="command"><code>!hotline</code><span>Helpful support resources.</span></div>
+          <div class="command"><code>!help</code><span>Quick help and support info.</span></div>
+          <div class="command"><code>!agb</code><span>Always Give Back veteran support.</span></div>
+          <div class="command"><code>!roger / !goroger</code><span>ROGER mental wellness support.</span></div>
+          <div class="command"><code>!sss</code><span>Stop Soldier Suicide information.</span></div>
+        </div>
+      </div>
+
+      <div class="tile">
+        <h3>Stream Info</h3>
+        <div class="command-list">
+          <div class="command"><code>!commands</code><span>Shows this command page.</span></div>
+          <div class="command"><code>!capcom</code><span>Official Capcom Creators Page</span></div>
+          <div class="command"><code>!dbd</code><span>Dead by Daylight stream info.</span></div>
+          <div class="command"><code>!steam</code><span>Steam information.</span></div>
+          <div class="command"><code>!xbox</code><span>Xbox information.</span></div>
+          <div class="command"><code>!english / !eng</code><span>English chat reminder.</span></div>
+          <div class="command"><code>!clip</code><span>Clip the moment when available.</span></div>
+        </div>
+      </div>
+
+      <div class="tile">
+        <h3>Fun & Interaction</h3>
+        <div class="command-list">
+          <div class="command"><code>!first</code><span>Claim first in chat.</span></div>
+          <div class="command"><code>!hug</code><span>Send somebody some community love.</span></div>
+          <div class="command"><code>!joke</code><span>Drop a joke into chat.</span></div>
+          <div class="command"><code>!coffee / !rez</code><span>Coffee time. Fuel the mission.</span></div>
+          <div class="command"><code>!rogue / !energy</code><span>Rogue Energy command.</span></div>
+        </div>
+      </div>
+
+      <div class="tile">
+        <h3>Games</h3>
+        <div class="command-list">
+          <div class="command"><code>!slots</code><span>Chat game command.</span></div>
+          <div class="command"><code>!bduel</code><span>Bot duel command.</span></div>
+          <div class="command"><code>!brules / !brule</code><span>Bot rules command.</span></div>
+          <div class="command"><code>!bhelp</code><span>Bduel help command.</span></div>
+          <div class="command"><code>!gamble</code><span>Test your luck.</span></div>
+          <div class="command"><code>!roulette</code><span>Spin the wheel.</span></div>
+          <div class="command"><code>!level</code><span>Check level or rank info.</span></div>
+          <div class="command"><code>!xp</code><span>Check XP info.</span></div>
+        </div>
+      </div>
+
+      <div class="tile">
+        <h3>Moderators & Stats</h3>
+        <div class="command-list">
+          <div class="command"><code>!so</code><span>Moderator shoutout command.</span></div>
+          <div class="command"><code>!wtf</code><span>Moderator.</span></div>
+          <div class="command"><code>!shout</code><span>Followers shoutout command.</span></div>
+          <div class="command"><code>!uptime</code><span>See how long the stream has been live.</span></div>
+          <div class="command"><code>!followage</code><span>Check how long someone has followed.</span></div>
+        </div>
+      </div>
+
+      <div class="tile wide">
+        <h3>Command Notes</h3>
+        <div class="command-list">
+          <div class="command" style="grid-column:1/-1">
+            More commands and features are coming online. Some commands may depend on the stream bot, platform tools, or moderator settings. When in doubt, ask in chat and someone in the fireteam will square you away.
+          </div>
+        </div>
+      </div>
     </section>
 
     <footer>

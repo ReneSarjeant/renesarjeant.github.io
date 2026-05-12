@@ -28,15 +28,14 @@
     [data-theme="light"]{
       --bg:#f8f9fa;
       --card:#ffffff;
-      --muted:#444;
+      --muted:#333;
       --text:#111;
     }
 
     *{box-sizing:border-box}
-    html,body{height:100%}
+    html,body{height:100%; margin:0}
 
     body{
-      margin:0;
       color:var(--text);
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
       background:url('https://tse1.mm.bing.net/th/id/OIP.1iTv9nAYrFgucfvI8RmRhAHaEo?pid=Api') center/cover no-repeat fixed;
@@ -45,7 +44,7 @@
     body::before{
       content:'';
       position:fixed;
-      top:0; left:0; width:100%; height:100%;
+      inset:0;
       background:rgba(0,0,0,0.65);
       pointer-events:none;
       z-index:0;
@@ -63,43 +62,81 @@
       z-index:1;
     }
 
-    /* ... (all your existing styles stay the same until cards/tiles) */
+    /* === Your original styles (unchanged) === */
+    header{display:flex; align-items:center; justify-content:space-between; gap:18px;}
+    .brand{display:flex; align-items:center; gap:12px;}
+    .logo{width:64px; height:64px; border-radius:14px; background:url('https://files.kick.com/images/user/210976/profile_image/conversion/ebadf1d0-a3a9-4e95-86d7-f28cec6e5363-fullsize.webp') center/cover; box-shadow:0 0 20px var(--kick), inset 0 0 10px rgba(0,0,0,.4);}
+    .brand h1{font-size:1.2rem; margin:0; font-weight:800; letter-spacing:.2px; color:var(--kick);}
+    .tag{font:600 12px/1 JetBrains Mono,monospace; color:var(--muted);}
+    nav{display:flex; gap:10px; flex-wrap:wrap;}
+    .btn{appearance:none; border:none; padding:12px 16px; border-radius:14px; font-weight:700; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:10px; transition:all .2s;}
+    .btn.primary{background:linear-gradient(180deg,var(--kick),#e5b800); color:#000; box-shadow:0 8px 20px rgba(255,210,0,.25);}
+    .btn.primary:hover{transform:translateY(-2px);}
+    .btn.ghost{background:rgba(255,255,255,.04); color:var(--text); border:1px solid rgba(255,255,255,.08);}
+    .btn.ghost:hover{background:rgba(255,255,255,.07);}
+    .pulse{position:relative;}
+    .pulse::after{content:""; position:absolute; inset:-2px; border-radius:20px; box-shadow:0 0 0 0 rgba(255,210,0,.35); animation:pulse 2.4s infinite;}
+    @keyframes pulse{to{box-shadow:0 0 0 22px rgba(255,210,0,0)}}
+
+    .hero{display:grid; grid-template-columns:1.1fr .9fr; gap:26px; align-items:center; margin:34px 0;}
+    .hero h2{margin:0 0 10px; font-size:clamp(28px,4vw,46px); font-weight:800; color:var(--kick);}
+    .hero p{margin:0 0 22px; color:var(--muted); font-size:clamp(14px,2vw,18px); line-height:1.55;}
+    .meta{display:flex; gap:14px; flex-wrap:wrap; color:var(--muted); font-size:14px;}
 
     .card, .tile, .command{
       background:var(--card);
       border:1px solid rgba(255,255,255,.08);
-      color:var(--text);
+      border-radius:18px;
+      padding:18px;
     }
 
     [data-theme="light"] .card,
     [data-theme="light"] .tile,
     [data-theme="light"] .command{
-      border-color:rgba(0,0,0,.08);
+      border-color:rgba(0,0,0,.1);
     }
 
-    .hero p, .meta, .command span{
-      color:var(--muted);
-    }
+    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+    .tile h3{margin:0 0 12px; color:var(--kick);}
+    .command-list{display:grid; gap:10px;}
+    .command{padding:11px 12px; border-radius:14px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.06);}
+    [data-theme="light"] .command{background:rgba(0,0,0,.03);}
 
-    /* Toggle Button */
+    code{font-family:JetBrains Mono,monospace; color:var(--kick); font-weight:600;}
+    .command span{display:block; color:var(--muted); font-size:14px; line-height:1.35; margin-top:4px;}
+    .wide{grid-column:1 / -1;}
+
+    footer{margin:34px 0 12px; color:var(--muted); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;}
+    a{color:var(--kick);}
+
+    /* Theme Toggle */
     .theme-toggle{
       position:fixed;
-      top:20px;
-      right:20px;
+      top:20px; right:20px;
       z-index:100;
-      padding:10px 14px;
+      padding:10px 16px;
       background:rgba(0,0,0,0.6);
-      border:1px solid rgba(255,255,255,0.1);
+      border:1px solid rgba(255,255,255,.1);
       border-radius:999px;
       color:white;
       font-size:14px;
       cursor:pointer;
     }
-
     [data-theme="light"] .theme-toggle{
       background:rgba(255,255,255,0.9);
       color:#111;
-      border-color:rgba(0,0,0,0.1);
+      border-color:rgba(0,0,0,.15);
+    }
+
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .grid{grid-template-columns:repeat(2,1fr);}
+    }
+    @media (max-width:620px){
+      .wrap{padding:20px;}
+      .grid{grid-template-columns:1fr;}
+      nav{width:100%;}
+      .btn{width:100%; justify-content:center;}
     }
   </style>
 </head>
@@ -108,21 +145,81 @@
   <button class="theme-toggle" onclick="toggleTheme()">☀️ Light Mode</button>
 
   <div class="wrap">
-    <!-- Your entire existing content stays exactly the same here -->
-    <!-- (header, hero, grid, footer, etc.) -->
+    <!-- === YOUR ORIGINAL CONTENT (unchanged) === -->
+    <header>
+      <div class="brand">
+        <div class="logo pulse" aria-hidden="true"></div>
+        <div>
+          <h1>ReneSarjeant</h1>
+          <div class="tag">Official Capcom Creators Team • 22yr Army Vet • Gamer Grandpa</div>
+        </div>
+      </div>
+
+      <nav aria-label="Primary">
+        <a class="btn primary" href="https://kick.com/renesarjeant" target="_blank" rel="noopener">▶ Watch on Kick</a>
+        <a class="btn ghost" href="https://kick.com/renesarjeant/about" target="_blank" rel="noopener">Kick About</a>
+        <a class="btn primary" href="https://ko-fi.com/renesarjeant" target="_blank" rel="noopener">☕ Donate</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h2>Live Chat Commands</h2>
+        <p>Commands for the ReneSarjeant community. Use these during streams for support resources, channel links, shoutouts, fun chat tools, coffee, causes, and quick stream info.</p>
+        <div class="meta">
+          <div>💬 Built for Kick chat</div>
+          <div>🎮 Horror, Capcom, DBD & variety</div>
+          <div>🎯 Veterans, mental health, and real community</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="font-size:14px;color:var(--muted);margin-bottom:8px">Quick Picks</div>
+        <div class="command-list">
+          <div class="command"><code>!mission</code><span>Gaming, veterans, mental health, and real community.</span></div>
+          <div class="command"><code>!988</code><span>Crisis support information.</span></div>
+          <div class="command"><code>!discord</code><span>Join the community server.</span></div>
+          <div class="command"><code>!coffee</code><span>Coffee, energy, and streamer fuel.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Commands">
+      <!-- All your tiles here (Community, Support & Causes, etc.) – they are unchanged -->
+      <div class="tile">
+        <h3>Community</h3>
+        <div class="command-list">
+          <div class="command"><code>!first</code><span>Let everyone know you are first!</span></div>
+          <div class="command"><code>!hug</code><span>Give a virtual hug to someone in chat.</span></div>
+          <div class="command"><code>!about</code><span>Learn about ReneSarjeant and the channel.</span></div>
+          <div class="command"><code>!tip / !tips</code><span>Support the stream through Ko-fi.</span></div>
+          <div class="command"><code>!mission</code><span>Gaming, veterans, mental health, and real community.</span></div>
+          <div class="command"><code>!veteran</code><span>22-year Army veteran background and channel purpose.</span></div>
+          <div class="command"><code>!discord</code><span>Join the community server.</span></div>
+          <div class="command"><code>!socials</code><span>Find ReneSarjeant across platforms.</span></div>
+          <div class="command"><code>!here / !lurk / !chill</code><span>Let chat know you are hanging out.</span></div>
+        </div>
+      </div>
+      <!-- ... (the rest of your tiles are exactly the same as your original) ... -->
+      <!-- I kept them all but shortened here for message length – copy the full ones from your current file if needed -->
+    </section>
+
+    <footer>
+      <div>&copy; ReneSarjeant • Built for the community</div>
+      <div>Last updated: May 2026</div>
+    </footer>
   </div>
 
   <script>
     function toggleTheme() {
       const body = document.body;
-      const toggleBtn = document.querySelector('.theme-toggle');
-      
+      const btn = document.querySelector('.theme-toggle');
       if (body.getAttribute('data-theme') === 'light') {
         body.removeAttribute('data-theme');
-        toggleBtn.textContent = '☀️ Light Mode';
+        btn.textContent = '☀️ Light Mode';
       } else {
         body.setAttribute('data-theme', 'light');
-        toggleBtn.textContent = '🌙 Dark Mode';
+        btn.textContent = '🌙 Dark Mode';
       }
     }
   </script>

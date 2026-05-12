@@ -13,7 +13,7 @@ Focused on Resident Evil, Dead by Daylight, and other survival horror games, str
 ## Social Links
 - Kick: [https://kick.com/renesarjeant](https://kick.com/renesarjeant)
 - Link Tree: [[https://linktr.e/renesarjeant](https://linktr.ee/renesarjeant)
-- Ko-fi: [https://ko-fi.com/renesarjeant](https://ko-fi.com/renesarjeant)
+- Ko-fi: https://ko-fi.com/renesarjeant](https://ko-fi.com/renesarjeant)
 - X/Twitter: [https://twitter.com/renesarjeant](https://twitter.com/renesarjeant)
 
 ---

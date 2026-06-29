@@ -3,7 +3,7 @@
 **Website:** [https://renesarjeant.github.io](https://renesarjeant.github.io)  
 
 ## About
-Rene Sarjeant is a 22-year U.S. Army veteran, CAPCOM Creator, and variety horror streamer on Kick.com.  
+Rene Sarjeant is a 22-year U.S. Army veteran, Grandpa Gamer, and Variety Horror Streamer on Kick.com.  
 Focused on Resident Evil, Dead by Daylight, and other survival horror games, streaming with a mission to support veteran mental health.
 
 ## Causes We Support
